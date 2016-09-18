@@ -9,6 +9,8 @@
 import React, { Component } from "react";
 
 import Header from "./header";
+import Footer from "./footer";
+
 export default class RootContainer extends Component {
     render() {
         return (
@@ -18,7 +20,7 @@ export default class RootContainer extends Component {
                     { this.props.children }
                 </main>
                 <aside>kikoo!</aside>
-                <footer>©2016</footer>
+                <Footer />
             </div>
         );
     }
