@@ -1,14 +1,19 @@
 {
   "env": {
     "node": true,
-    "es6": true
+    "es6": true,
+    "browser": true
   },
+  "plugins": [
+    "react"
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
       "impliedStrict": true,
-      "globalReturn": true
+      "globalReturn": true,
+      "jsx": true
     }
   },
   "rules": {
@@ -191,6 +196,9 @@
     "prefer-template": 2,
     "require-yield": 2,
     "rest-spread-spacing": 2,
-    "template-curly-spacing": [ 2, "always" ]
+    "template-curly-spacing": [ 2, "always" ],
+
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2
   }
 }
