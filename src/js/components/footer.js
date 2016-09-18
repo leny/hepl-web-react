@@ -34,7 +34,7 @@ export default class Footer extends Component {
             "method": "get",
             "type": "json",
         } ).then( ( { name, url } ) => {
-            let $designer = ( <span className="copy__designer">
+            let $designer = ( <span className="footer-copy__designer">
                 design by
                 { " " }
                 <a href={ url }>{ name }</a>
@@ -49,19 +49,21 @@ export default class Footer extends Component {
     render() {
         return (
             <footer className="footer">
-                <div className="links footer__links">
-                    <a className="links__link" href="http://www.provincedeliege.be/hauteecole" rel="external">HEPL</a>
+                <h2 className="footer__title">Avant de nous quitter…</h2>
+
+                <div className="footer-links footer__links">
+                    <a className="footer-links__link" href="http://www.provincedeliege.be/hauteecole" rel="external">HEPL</a>
                     { " " }
-                    <span className="links__separator"></span>
+                    <span className="footer-links__separator"></span>
                     { " " }
-                    <a className="links__link" href="https://ecolevirtuelle.provincedeliege.be" rel="external">École Virtuelle</a>
+                    <a className="footer-links__link" href="https://ecolevirtuelle.provincedeliege.be" rel="external">École Virtuelle</a>
                 </div>
 
-                <div className="copy footer__copy">
+                <div className="footer-copy footer__copy">
                     <small>
-                        <span className="copy__code">
+                        <span className="footer-copy__code">
                             { `${ this.props.copy }, ` }
-                            <a className="copy__link" href="https://hepl-web.github.io">hepl-web</a>
+                            <a className="footer-copy__link" href="https://hepl-web.github.io">hepl-web</a>
                         </span>
                         { this.state.designer ? ", " : "" }
                         { this.state.designer }

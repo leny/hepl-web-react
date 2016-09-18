@@ -46,7 +46,7 @@ export default class OrganisationsList extends Component {
     render() {
         return (
             <section className="main__section organisations">
-                <h2>{ this.props.title }</h2>
+                <h2 className="organisations__title">{ this.props.title }</h2>
                 { this.state.sections.map( this.generateBloc.bind( this ) ) }
             </section>
         );

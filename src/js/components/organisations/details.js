@@ -62,22 +62,28 @@ export default class OrganisationDetails extends Component {
     }
 
     render() {
-        let oInfo;
+        let oInfo,
+            aClassNames = [
+                "organisations__member",
+                "organisation",
+            ];
 
         if ( this.props.type === "organisation" ) {
             oInfo = <span>{ this.state.repos } dépôt{ this.state.repos > 1 && "s" }</span>;
         } else if ( this.props.type === "repository" && this.state.last_update ) {
+            aClassNames.push( "organisation--repo" );
             oInfo = <span>Dernière mise à jour : { dateFormatter( this.state.last_update ) }</span>;
         }
 
         return (
-            <article>
-                <a href={ this.state.url }>
-                    <h4>{ this.props.name }</h4>
-                    <figure>
-                        <img src={ this.state.avatar } />
+            <article className={ aClassNames.join( " " ) }>
+                <a className="organisation__link" href={ this.state.url }>
+                    <h4 className="organisation__name">{ this.props.name }</h4>
+                    <figure className="organisation__avatar">
+                        <img className="organisation__img" src={ this.state.avatar } />
                     </figure>
-                    <div className="infos">
+                    <span className="organisation__path">{ this.props.path }</span>
+                    <div className="organisation__infos">
                         { oInfo }
                     </div>
                 </a>

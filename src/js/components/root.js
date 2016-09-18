@@ -18,7 +18,7 @@ export default class RootContainer extends Component {
         return (
             <div>
                 <Header />
-                <main>
+                <main className="main">
                     <Introduction />
                     <OrganisationsList />
                 </main>

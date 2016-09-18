@@ -25,8 +25,8 @@ export default class Introduction extends Component {
     render() {
         return (
             <section className="main__section introduction">
-                <h2>{ this.props.title }</h2>
-                <div dangerouslySetInnerHTML={ this.props.content }></div>
+                <h2 className="introduction__title">{ this.props.title }</h2>
+                <div className="introduction__content" dangerouslySetInnerHTML={ this.props.content }></div>
             </section>
         );
     }
