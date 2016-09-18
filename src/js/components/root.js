@@ -11,6 +11,7 @@ import React, { Component } from "react";
 import Header from "./header";
 import Footer from "./footer";
 import Introduction from "./introduction";
+import OrganisationsList from "./organisations/list";
 
 export default class RootContainer extends Component {
     render() {
@@ -19,6 +20,7 @@ export default class RootContainer extends Component {
                 <Header />
                 <main>
                     <Introduction />
+                    <OrganisationsList />
                 </main>
                 <aside>kikoo!</aside>
                 <Footer />
