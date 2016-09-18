@@ -1,0 +1,21 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/generic/_box-sizing.scss - Box Sizing Reset
+ *
+ * coded by leny@flatLand!
+ * started at 18/09/2016
+ */
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}

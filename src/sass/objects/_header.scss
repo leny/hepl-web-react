@@ -1,0 +1,18 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/objects/_header.scss - Non-cosmetic styles for header
+ *
+ * coded by leny@flatLand!
+ * started at 18/09/2016
+ */
+
+.header {
+    position: relative;
+    margin: 0 auto 1rem;
+    &__school,
+    &__bachelor,
+    &__bachelor-suffix,
+    &__section {
+        display: block;
+    }
+}

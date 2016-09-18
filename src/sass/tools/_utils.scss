@@ -1,0 +1,19 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/tools/_utils.scss - Small utilities
+ *
+ * coded by leny@flatLand!
+ * started at 18/09/2016
+ */
+
+.hidden {
+    display: none;
+}
+
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}

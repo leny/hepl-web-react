@@ -1,0 +1,29 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/components/_organisation.scss - Design styles for OrganisationDetails
+ *
+ * coded by leny@flatLand!
+ * started at 19/09/2016
+ */
+
+.organisation {
+    &__link {
+        border: .0625rem solid $linkColor;
+        border-radius: .3125rem;
+        transition: border-color 0.25s ease-in-out;
+        &:hover {
+            border-color: $hoverLinkColor;
+        }
+    }
+    &__name {
+        margin-bottom: .125rem;
+    }
+    &__path {
+        font: normal .85rem $consoleStack;
+        color: $altTextColor;
+    }
+    &__infos {
+        font: italic .8rem $consoleStack;
+        color: mix( $altTextColor, $linkColor );
+    }
+}

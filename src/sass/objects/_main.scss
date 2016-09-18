@@ -1,0 +1,13 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/objects/_main.scss - Non-cosmetic styles for main
+ *
+ * coded by leny@flatLand!
+ * started at 18/09/2016
+ */
+
+.main {
+    &__section {
+        @include clearfix();
+    }
+}

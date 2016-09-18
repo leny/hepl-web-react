@@ -1,0 +1,30 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/objects/_organisation.scss - Non-cosmetic styles for OrganisationDetails
+ *
+ * coded by leny@flatLand!
+ * started at 18/09/2016
+ */
+
+.organisation {
+    margin-bottom: 1rem;
+    &__link {
+        display: block;
+        position: relative;
+        min-height: 4.375rem;
+        padding: .625rem .625rem .625rem 4.375rem;
+    }
+    &__name {
+        margin-top: 0;
+    }
+    &__avatar {
+        position: absolute;
+        width: 3.125rem;
+        top: .625rem;
+        left: .625rem;
+        margin: 0;
+    }
+    &__img {
+        max-width: 100%;
+    }
+}

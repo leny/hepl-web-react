@@ -1,0 +1,20 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/objects/_organisations-list.scss - Non-cosmetic styles for OrganisationsList
+ *
+ * coded by leny@flatLand!
+ * started at 18/09/2016
+ */
+
+.organisations {
+    &__bloc {
+        @include clearfix();
+    }
+    &__member {
+        width: 48%;
+        float: left;
+        &:nth-child(odd) {
+            margin-left: 2%;
+        }
+    }
+}

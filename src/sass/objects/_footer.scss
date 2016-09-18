@@ -1,0 +1,21 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/objects/_footer.scss - Non-cosmetic styles for footer
+ *
+ * coded by leny@flatLand!
+ * started at 18/09/2016
+ */
+
+.footer {
+    &__title {
+        display: none;
+    }
+}
+
+.footer-links {
+    &__separator {
+        &::before {
+            content: "•";
+        }
+    }
+}

@@ -1,0 +1,16 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/base/_root.scss - Base styles for root element
+ *
+ * coded by leny@flatLand!
+ * started at 18/09/2016
+ */
+
+html {
+    font: normal 100%/1.33 $fontStack;
+    color: $textColor;
+}
+
+body {
+    padding: .5rem 2rem;
+}
