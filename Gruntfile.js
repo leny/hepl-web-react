@@ -37,6 +37,16 @@ module.exports = function( grunt ) {
                 },
             },
         },
+        "csso": {
+            "styles": {
+                "options": {
+                    "report": "gzip",
+                },
+                "files": {
+                    "static/css/styles.min.css": [ "static/css/styles.css" ],
+                },
+            },
+        },
         "env": {
             "libs": {
                 "NODE_ENV": "production",
@@ -49,6 +59,17 @@ module.exports = function( grunt ) {
             "scripts": [
                 "src/js/**/*.js",
             ]
+        },
+        "sass": {
+            "options": {
+                "outputStyle": "expanded",
+                "sourceMap": true,
+            },
+            "styles": {
+                "files": {
+                    "static/css/styles.css": "src/sass/styles.scss",
+                },
+            },
         },
         "uglify": {
             "options": {
@@ -75,6 +96,14 @@ module.exports = function( grunt ) {
                     "app",
                 ],
             },
+            "styles": {
+                "files": [
+                    "src/sass/**/*.scss",
+                ],
+                "tasks": [
+                    "styles",
+                ],
+            },
         },
     } );
 
@@ -92,6 +121,11 @@ module.exports = function( grunt ) {
         "eslint",
     ] );
 
+    grunt.registerTask( "styles", [
+        "sass:styles",
+        "csso:styles",
+    ] );
+
     grunt.registerTask( "app", [
         "browserify:app",
         "uglify:app",
@@ -101,6 +135,7 @@ module.exports = function( grunt ) {
         "libs",
         "lint",
         "app",
+        "styles",
     ] );
 
     grunt.registerTask( "work", [

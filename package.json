@@ -28,8 +28,10 @@
     "grunt-cli": "^1.2.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-csso": "^2.0.1",
     "grunt-env": "^0.4.4",
     "grunt-eslint": "^19.0.0",
+    "grunt-sass": "^1.2.1",
     "load-grunt-tasks": "^3.5.2"
   },
   "dependencies": {
