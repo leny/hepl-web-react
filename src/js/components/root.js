@@ -10,6 +10,7 @@ import React, { Component } from "react";
 
 import Header from "./header";
 import Footer from "./footer";
+import Introduction from "./introduction";
 
 export default class RootContainer extends Component {
     render() {
@@ -18,6 +19,7 @@ export default class RootContainer extends Component {
                 <Header />
                 <main>
                     { this.props.children }
+                    <Introduction />
                 </main>
                 <aside>kikoo!</aside>
                 <Footer />
