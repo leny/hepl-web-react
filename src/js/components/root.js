@@ -12,6 +12,7 @@ import Header from "./header";
 import Footer from "./footer";
 import Introduction from "./introduction";
 import OrganisationsList from "./organisations/list";
+import ResourcesList from "./resources/list";
 
 export default class RootContainer extends Component {
     render() {
@@ -21,6 +22,7 @@ export default class RootContainer extends Component {
                 <main className="main">
                     <Introduction />
                     <OrganisationsList />
+                    <ResourcesList />
                 </main>
                 <aside>kikoo!</aside>
                 <Footer />
