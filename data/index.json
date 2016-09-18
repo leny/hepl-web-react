@@ -1,0 +1,85 @@
+[
+  {
+    "title": "Bloc 1",
+    "members": [
+      {
+        "name": "Création de pages web",
+        "type": "organisation",
+        "path": "hepl-cpw"
+      },
+      {
+        "name": "Design Web",
+        "type": "organisation",
+        "path": "hepl-dwt"
+      }
+    ]
+  },
+  {
+    "title": "Bloc 2",
+    "members": [
+      {
+        "name": "Design Web",
+        "type":"organisation",
+        "path": "hepl-dw"
+      },
+      {
+        "name": "Développement Côté Client",
+        "type":"organisation",
+        "path": "hepl-dcc"
+      },
+      {
+        "name": "Développement Côté Serveur",
+        "type":"organisation",
+        "path": "hepl-pwcs"
+      },
+      {
+        "name": "Multimédia Interactif",
+        "type":"organisation",
+        "path": "hepl-mmi",
+        "about": "vadmekom"
+      },
+      {
+        "name": "Réseaux & serveurs",
+        "type":"organisation",
+        "path": "hepl-rsv",
+        "about": "vadmekom"
+      },
+      {
+        "name": "Systèmes de gestion de contenu",
+        "type":"organisation",
+        "path": "hepl-sgc"
+      }
+    ]
+  },
+  {
+    "title": "Bloc 3",
+    "members": [
+      {
+        "name": "Projets web",
+        "type": "organisation",
+        "path": "hepl-pw"
+      },
+      {
+        "name": "Applications Internet Riches",
+        "type": "organisation",
+        "path": "hepl-ria",
+        "about": "vadmekom"
+      }
+    ]
+  },
+  {
+    "title": "Divers",
+    "members": [
+      {
+        "name": "Boîte à outils",
+        "type": "repository",
+        "path": "hepl-web/toolbox"
+      },
+      {
+        "name": "Archives",
+        "type": "organisation",
+        "path": "hepl-archives"
+      }
+    ]
+  }
+]
