@@ -18,7 +18,6 @@ export default class RootContainer extends Component {
             <div>
                 <Header />
                 <main>
-                    { this.props.children }
                     <Introduction />
                 </main>
                 <aside>kikoo!</aside>
