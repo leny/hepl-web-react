@@ -8,13 +8,12 @@
 
 import React, { Component } from "react";
 
+import Header from "./header";
 export default class RootContainer extends Component {
     render() {
         return (
             <div>
-                <header>
-                    <h1>hepl-web</h1>
-                </header>
+                <Header />
                 <main>
                     { this.props.children }
                 </main>
