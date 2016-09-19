@@ -8,12 +8,12 @@
 
 import React from "react";
 import { render } from "react-dom";
-import { Router, Route, browserHistory } from "react-router";
+import { Router, Route, hashHistory } from "react-router";
 
 import RootContainer from "./components/root";
 
 render(
-    <Router history={ browserHistory }>
+    <Router history={ hashHistory }>
         <Route component={ RootContainer }>
             <Route path="/" />
         </Route>
