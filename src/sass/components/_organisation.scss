@@ -8,15 +8,19 @@
 
 .organisation {
     &__link {
-        border: .0625rem solid $linkColor;
+        border: .0625rem solid $textColor;
         border-radius: .3125rem;
         transition: border-color 0.25s ease-in-out;
         &:hover {
             border-color: $hoverLinkColor;
+            &__name {
+                color: $hoverLinkColor;
+            }
         }
     }
     &__name {
         margin-bottom: .125rem;
+        color: $textColor;
     }
     &__path {
         font: normal .85rem $consoleStack;
