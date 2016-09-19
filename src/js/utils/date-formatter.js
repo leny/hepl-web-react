@@ -34,8 +34,7 @@ export default function( dGivenDate = null ) {
 
     aDateParts.push( `${ iDay }${ iDay === 1 ? "er" : "" }` );
     aDateParts.push( MONTHS[ dDate.getMonth() ] );
-    aDateParts.push( dDate.getFullYear() );
-    aDateParts.push( "à" );
+    aDateParts.push( `${ dDate.getFullYear() },` );
     aDateParts.push( `${ fAddLeadingZero( dDate.getHours() ) }h${ fAddLeadingZero( dDate.getMinutes() ) }` );
 
     return aDateParts.join( " " );
