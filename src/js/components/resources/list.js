@@ -11,6 +11,8 @@ import reqwest from "reqwest";
 import Remarkable from "remarkable";
 import Promise from "bluebird";
 
+import ResourcesListElement from "./list-element";
+
 export default class ResourcesList extends Component {
     constructor( oProps ) {
         let oRemarkable = new Remarkable(),
@@ -33,6 +35,7 @@ export default class ResourcesList extends Component {
     }
 
     componentDidMount() {
+        // TODO: extract this in store component
         ResourcesList.getReqwestFor( "index.json" )
             .then( this.buildIndex.bind( this ) );
     }
@@ -49,23 +52,36 @@ export default class ResourcesList extends Component {
                     } )
             ) )
             .then( ( aAugmentedArticlesList ) => {
-                // TODO: transform date string into date object
-                // TODO: order resources by date
+                let aResources;
+
+                aResources = aAugmentedArticlesList.map( ( { author, content, date, path } ) => ( {
+                    author,
+                    content,
+                    "date": new Date( date ),
+                    path,
+                } ) );
+
+                aResources.sort( ( oA, oB ) => oA.date.getTime() - oB.date.getTime() );
 
                 this.setState( {
-                    "resources": aAugmentedArticlesList,
+                    "resources": aResources,
                 } );
             } );
     }
 
     render() {
-        // TODO: fill with resources
+        let aRessources = [];
+
+        aRessources = this.state.resources.map( ( oArticle, iIndex ) => (
+            <ResourcesListElement index={ iIndex } { ...oArticle } />
+        ) );
+
         return (
             <section className="main__section resources">
                 <h2 className="resources__title">{ this.props.title }</h2>
                 <div className="resources__explain" dangerouslySetInnerHTML={ this.props.introduction }></div>
                 <hr className="resources__separator" />
-
+                { aRessources }
             </section>
         );
     }
