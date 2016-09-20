@@ -1,0 +1,17 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/components/_footer.scss - Design styles for Footer
+ *
+ * coded by leny@flatLand!
+ * started at 20/09/2016
+ */
+
+.footer {
+    margin-top: 1.5rem;
+    padding-top: .5rem;
+    border-top: .0625rem solid $altTextColor;
+
+    &__copy {
+        text-align: right;
+    }
+}

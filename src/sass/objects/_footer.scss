@@ -7,8 +7,19 @@
  */
 
 .footer {
+    @include clearfix();
     &__title {
         display: none;
+    }
+    &__links, &__copy {
+        width: 48%;
+    }
+    &__links {
+        float: left;
+    }
+    &__copy {
+        float: right;
+        margin-left: 4%;
     }
 }
 

@@ -62,7 +62,8 @@ export default class Footer extends Component {
                 <div className="footer-copy footer__copy">
                     <small>
                         <span className="footer-copy__code">
-                            { `${ this.props.copy }, ` }
+                            { this.props.copy }
+                            { " " }
                             <a className="footer-copy__link" href="https://hepl-web.github.io">hepl-web</a>
                         </span>
                         { this.state.designer ? ", " : "" }
