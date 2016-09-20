@@ -17,26 +17,20 @@ export default class ResourcesListElement extends Component {
     }
 
     render() {
-        let aClasses = [ "resources__element", "resource" ],
-            oPreview;
-
-        if ( this.props.index === 0 ) {
-            let oRemarkable = new Remarkable(),
-                oPreviewContent = {
-                    "__html": oRemarkable.render( this.props.preview ),
-                };
-
-            aClasses.push( "resource--with-preview" );
-            oPreview = (
-                <div className="resource__preview" dangerouslySetInnerHTML={ oPreviewContent }></div>
-            );
-        }
+        let oRemarkable = new Remarkable(),
+            oPreviewContent = {
+                "__html": oRemarkable.render( this.props.preview ),
+            };
 
         return (
-            <article className={ aClasses.join( " " ) }>
-                <h3 className="resource__title">{ this.props.title }</h3>
-                { oPreview }
-                <Link className="resource__link" to={ `/articles/${ this.props.path }` }>Lire l'article</Link>
+            <article className="resources__element resource">
+                <h3 className="resource__title">
+                    <Link to={ `/articles/${ this.props.path }` }>{ this.props.title }</Link>
+                </h3>
+                <div className="resource__preview" dangerouslySetInnerHTML={ oPreviewContent }></div>
+                <div className="resource__link-container">
+                    <Link className="resource__link" to={ `/articles/${ this.props.path }` }>(lire la suite)</Link>
+                </div>
             </article>
         );
     }

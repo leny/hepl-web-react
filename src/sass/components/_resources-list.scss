@@ -1,0 +1,16 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/components/_resources-list.scss - Design styles for ResourcesList
+ *
+ * coded by leny@flatLand!
+ * started at 20/09/2016
+ */
+
+.resources {
+    &__explain {
+        margin-bottom: .5rem;
+        padding-bottom: .5rem;
+        border-bottom: .0625rem dashed $altTextColor;
+    }
+    &__container {}
+}

@@ -1,0 +1,26 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/components/_resource.scss - Design styles for Resource
+ *
+ * coded by leny@flatLand!
+ * started at 20/09/2016
+ */
+
+.resource {
+    margin-top: 1rem;
+    padding-top: .5rem;
+    border-top: .0625rem dashed lighten( $altTextColor, 15% );
+    &:first-child {
+        margin: 0;
+        padding: 0;
+        border-top: 0;
+    }
+    &__title {
+        color: mix( $textColor, $linkColor );
+    }
+    &__link-container {
+        font-style: italic;
+        font-size: .875rem;
+        text-align: right;
+    }
+}

@@ -70,18 +70,21 @@ export default class ResourcesList extends Component {
     }
 
     render() {
-        let aRessources = [];
+        let mRessources;
 
-        aRessources = this.state.resources.map( ( oArticle, iIndex ) => (
-            <ResourcesListElement index={ iIndex } { ...oArticle } />
-        ) );
+        if ( this.state.resources.length ) {
+            mRessources = this.state.resources.map( ( oArticle, iIndex ) => (
+                <ResourcesListElement index={ iIndex } { ...oArticle } />
+            ) );
+        } else {
+            mRessources = "chargement…";
+        }
 
         return (
             <section className="main__section resources">
                 <h2 className="resources__title">{ this.props.title }</h2>
                 <div className="resources__explain" dangerouslySetInnerHTML={ this.props.introduction }></div>
-                <hr className="resources__separator" />
-                { aRessources }
+                <div className="resources__container">{ mRessources }</div>
             </section>
         );
     }
