@@ -1,0 +1,20 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/components/_header.scss - Design styles for header
+ *
+ * coded by leny@flatLand!
+ * started at 20/09/2016
+ */
+
+.header {
+    &__link {
+        text-decoration: none;
+    }
+    &__link,
+    &__school,
+    &__bachelor,
+    &__bachelor-suffix,
+    &__section {
+        color: $textColor;
+    }
+}
