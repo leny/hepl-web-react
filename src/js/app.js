@@ -11,11 +11,13 @@ import { render } from "react-dom";
 import { Router, Route, hashHistory } from "react-router";
 
 import RootContainer from "./components/root";
+import ResourceDetails from "./components/resources/details";
 
 render(
     <Router history={ hashHistory }>
         <Route component={ RootContainer }>
             <Route path="/" />
+            <Route path="/articles/:articlePath" component={ ResourceDetails } />
         </Route>
     </Router>,
     document.querySelector( "#app" )
