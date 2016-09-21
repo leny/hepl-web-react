@@ -14,6 +14,7 @@ import Footer from "./footer";
 import Introduction from "./introduction";
 import OrganisationsList from "./organisations/list";
 import ResourcesList from "./resources/list";
+import LinksList from "./links/list";
 
 export default class RootContainer extends Component {
     render() {
@@ -42,7 +43,7 @@ export default class RootContainer extends Component {
             <div>
                 <Header />
                 { oMain }
-                <aside>kikoo!</aside>
+                <LinksList />
                 <Footer />
             </div>
         );
