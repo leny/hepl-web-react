@@ -15,10 +15,15 @@
         padding: 0;
         border-top: 0;
     }
-    &__title {
+    &__title-link {
         color: mix( $textColor, $linkColor );
     }
-    &__link-container {
+    &__infos {
+        font-style: italic;
+        font-size: .875rem;
+        color: $altTextColor;
+    }
+    &__read {
         font-style: italic;
         font-size: .875rem;
         text-align: right;

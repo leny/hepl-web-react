@@ -1,0 +1,19 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/objects/_resource.scss - Non-cosmetic styles for Resource
+ *
+ * coded by leny@flatLand!
+ * started at 21/09/2016
+ */
+
+.resource {
+    @include clearfix();
+    &__infos {
+        width: 67%;
+        float: left;
+    }
+    &__read {
+        width: 33%;
+        float: right;
+    }
+}
