@@ -72,7 +72,7 @@ export default class OrganisationDetails extends Component {
             oInfo = <span>{ this.state.repos } dépôt{ this.state.repos > 1 && "s" }</span>;
         } else if ( this.props.type === "repository" && this.state.last_update ) {
             aClassNames.push( "organisation--repo" );
-            oInfo = <span>Mise à jour : { dateFormatter( this.state.last_update ) }</span>;
+            oInfo = <time dateTime={ this.state.last_update }>Mise à jour : { dateFormatter( this.state.last_update ) }</time>;
         }
 
         return (
