@@ -42,8 +42,10 @@ export default class RootContainer extends Component {
         return (
             <div>
                 <Header />
-                { oMain }
-                <LinksList />
+                <div className="holder">
+                    { oMain }
+                    <LinksList />
+                </div>
                 <Footer />
             </div>
         );

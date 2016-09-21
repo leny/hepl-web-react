@@ -7,6 +7,8 @@
  */
 
 .main {
+    width: 75%;
+    float: left;
     &__section {
         @include clearfix();
     }

@@ -1,0 +1,19 @@
+/* hepl-web/hepl-web.github.io
+ *
+ * /sass/objects/_main.scss - Non-cosmetic styles for side links
+ *
+ * coded by leny@flatLand!
+ * started at 22/09/2016
+ */
+
+.side-links {
+    width: 24%;
+    float: right;
+    &__list {
+        list-style: none;
+        padding: 0;
+    }
+    &__list-element {
+        padding: 0;
+    }
+}
