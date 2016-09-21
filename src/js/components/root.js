@@ -20,8 +20,6 @@ export default class RootContainer extends Component {
         let oMain;
 
         if ( this.props.children ) {
-            console.log( this.props.children );
-
             oMain = (
                 <main className="main">
                     <div className="main__backlink-container">
