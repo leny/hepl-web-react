@@ -8,8 +8,7 @@
 
 import React, { Component } from "react";
 import Remarkable from "remarkable";
-import ResourcesList from "./list";
-import ResourcesListElement from "./list-element";
+import { loadResources } from "../../utils/resources";
 
 export default class ResourceDetails extends Component {
     constructor( oProps ) {
@@ -21,34 +20,41 @@ export default class ResourceDetails extends Component {
     }
 
     componentDidMount() {
-        // TODO: retreive author infos.
-        // TODO: manage error (I know.)
-        ResourcesList
-            .getReqwestFor( this.props.params.articlePath, "html" )
-            .then( this.parseContent.bind( this ) );
+        let sQueryPath = this.props.params.articlePath;
+
+        loadResources().then( ( aResources ) => {
+            let oResource;
+
+            oResource = aResources.find( ( { path } ) => path === sQueryPath );
+
+            if ( !oResource ) {
+                console.error( "Unknown resource." ); // TODO: manage this (I know.)
+
+                return;
+            }
+
+            this.parseContent( oResource );
+        } );
     }
 
-    parseContent( sRawContent ) {
+    parseContent( oResource ) {
         let oRemarkable = new Remarkable(),
-            { title, content } = ResourcesListElement.parseContent( sRawContent ),
-            oParsedContent;
+            { title, content, author, date } = oResource;
 
         // TODO: adjust content's titles levels
 
-        oParsedContent = {
-            "__html": oRemarkable.render( content ),
-        };
-
         this.setState( {
-            title,
-            "content": oParsedContent,
+            author,
+            "content": {
+                "__html": oRemarkable.render( content ),
+            },
+            date,
             "ready": true,
+            title,
         } );
     }
 
     render() {
-        console.log( this.state );
-
         if ( !this.state.ready ) {
             return (
                 <article className="resource resource--details">

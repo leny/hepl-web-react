@@ -7,11 +7,10 @@
  */
 
 import React, { Component } from "react";
-import reqwest from "reqwest";
 import Remarkable from "remarkable";
-import Promise from "bluebird";
+import { loadResources } from "../../utils/resources";
 
-import ResourcesListElement from "./list-element";
+import ResourcesListElement from "./element";
 
 export default class ResourcesList extends Component {
     constructor( oProps ) {
@@ -35,38 +34,11 @@ export default class ResourcesList extends Component {
     }
 
     componentDidMount() {
-        // TODO: extract this in store component
-        ResourcesList.getReqwestFor( "index.json" )
-            .then( this.buildIndex.bind( this ) );
-    }
-
-    buildIndex( aArticlesList = [] ) {
-        Promise
-            .each( aArticlesList, ( oArticleInfos ) => (
-                ResourcesList
-                    .getReqwestFor( oArticleInfos.path, "html" )
-                    .then( ( sRawContent ) => {
-                        oArticleInfos.content = sRawContent;
-
-                        return oArticleInfos;
-                    } )
-            ) )
-            .then( ( aAugmentedArticlesList ) => {
-                let aResources;
-
-                aResources = aAugmentedArticlesList.map( ( { author, content, date, path } ) => ( {
-                    author,
-                    content,
-                    "date": new Date( date ),
-                    path,
-                } ) );
-
-                aResources.sort( ( oA, oB ) => oA.date.getTime() - oB.date.getTime() );
-
-                this.setState( {
-                    "resources": aResources,
-                } );
+        loadResources().then( ( aResources ) => {
+            this.setState( {
+                "resources": aResources,
             } );
+        } );
     }
 
     render() {
@@ -87,16 +59,5 @@ export default class ResourcesList extends Component {
                 <div className="resources__container">{ mRessources }</div>
             </section>
         );
-    }
-
-    static getReqwestFor( sPath, sType = "json" ) {
-        return reqwest( {
-            "url": `https://api.github.com/repos/hepl-web/toolbox/contents/resources/${ sPath }`,
-            "method": "get",
-            "type": sType,
-            "headers": {
-                "Accept": "application/vnd.github.raw",
-            },
-        } );
     }
 }
